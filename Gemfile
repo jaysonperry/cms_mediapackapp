@@ -5,7 +5,8 @@ gem 'rails', '3.2.16'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+# This was with the original BrowserCMS Configuration
+# gem 'sqlite3'
 
 
 # Gems used only for assets and not required
@@ -38,3 +39,13 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem "browsercms", "3.5.7"
+
+# For Local Development
+group :development, :test do
+     gem 'sqlite3'
+end
+# For Heroku Production
+group :production do
+     gem 'pg'
+     gem 'rails_12factor'
+end
